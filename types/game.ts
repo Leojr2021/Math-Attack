@@ -1,12 +1,15 @@
-export type Screen = "start" | "select" | "instructions" | "playing" | "victory" | "defeat";
+export type Screen = "start" | "select" | "nintendo" | "instructions" | "playing" | "victory" | "defeat";
 
 export type CharacterOption = "girl" | "boy";
 
 export type BattleFeedback = "idle" | "correct" | "wrong";
 
-export interface DivisionQuestion {
-  dividend: number;
-  divisor: number;
+export type MathOperator = "x" | "/";
+
+export interface MathQuestion {
+  leftOperand: number;
+  operator: MathOperator;
+  rightOperand: number;
   answer: number;
   key: string;
 }

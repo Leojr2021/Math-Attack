@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Pelea de Division",
-  description: "Juego educativo 2D para practicar divisiones en una aventura divertida."
+  title: "Pelea de Matematica",
+  description: "Juego educativo 2D para practicar operaciones matematicas en una aventura divertida."
 };
 
 export default function RootLayout({

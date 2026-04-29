@@ -1,23 +1,22 @@
-# Pelea de Division
+# Pelea de Matematica
 
-Juego educativo 2D para ninos de 9 a 10 anos hecho con `Next.js`, `React` y `TypeScript`. El objetivo es derrotar 5 zombies caricaturescos resolviendo divisiones exactas.
+Juego educativo 2D para ninos de 9 a 10 anos hecho con `Next.js`, `React` y `TypeScript`. El objetivo es derrotar 10 monstruos caricaturescos resolviendo operaciones matematicas.
 
 ## Como funciona
 
-1. La pantalla de inicio muestra el titulo **Pelea de Division**.
+1. La pantalla de inicio muestra el titulo **Pelea de Matematica**.
 2. El jugador elige su genero.
 3. Se explican las reglas en una pantalla de instrucciones.
 4. En el juego principal el heroe avanza por un escenario tipo plataforma.
-5. Cada zombie presenta una division.
-6. Si la respuesta es correcta, el zombie es derrotado y el contador sube.
-7. Si la respuesta es incorrecta, el jugador pierde una vida y debe resolver la misma division.
-8. El juego termina con victoria al lograr 5 respuestas correctas o con derrota al quedarse sin vidas.
+5. Cada monstruo presenta una operacion matematica.
+6. Si la respuesta es correcta, el monstruo es derrotado y el contador sube.
+7. Si la respuesta es incorrecta, el jugador pierde una vida y debe resolver la misma operacion.
+8. El juego termina con victoria al lograr 10 respuestas correctas o con derrota al quedarse sin vidas.
 
 ## Reglas matematicas aplicadas
 
-- El divisor se genera entre `1` y `30`.
-- El dividendo se genera entre `100` y `300`.
-- Solo se usan divisiones exactas, sin decimales.
+- Las multiplicaciones y divisiones usan operandos entre `0` y `100`.
+- Las divisiones siempre son exactas, sin decimales.
 - Se evita repetir preguntas recientes.
 - Las respuestas se mantienen en un rango amigable para ninos de 9 a 10 anos.
 

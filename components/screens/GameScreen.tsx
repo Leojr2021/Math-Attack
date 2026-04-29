@@ -1,5 +1,5 @@
 import { GOAL_CORRECT_ANSWERS } from "@/lib/divisions";
-import type { BattleFeedback, CharacterOption, DivisionQuestion } from "@/types/game";
+import type { BattleFeedback, CharacterOption, MathQuestion } from "@/types/game";
 import { DivisionPrompt } from "../game/DivisionPrompt";
 import { GameHud } from "../game/GameHud";
 import { PlatformScene } from "../game/PlatformScene";
@@ -15,7 +15,7 @@ interface GameScreenProps {
   onClear: () => void;
   onDigit: (digit: string) => void;
   onSubmit: () => void;
-  question: DivisionQuestion;
+  question: MathQuestion;
 }
 
 export function GameScreen({

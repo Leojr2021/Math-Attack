@@ -1,3 +1,5 @@
+import { MAX_LIVES } from "@/lib/divisions";
+
 interface GameHudProps {
   lives: number;
   correctAnswers: number;
@@ -16,7 +18,7 @@ export function GameHud({
       <article className="hudPanel">
         <span className="hudPanel__label">Vidas</span>
         <div className="lifeRow" aria-label={`Vidas restantes: ${lives}`}>
-          {Array.from({ length: 5 }, (_, index) => (
+          {Array.from({ length: MAX_LIVES }, (_, index) => (
             <span
               key={`life-${index + 1}`}
               className={`lifeOrb ${index < lives ? "lifeOrb--filled" : "lifeOrb--empty"}`}
@@ -26,7 +28,7 @@ export function GameHud({
       </article>
 
       <article className="hudPanel">
-        <span className="hudPanel__label">Zombies vencidos</span>
+        <span className="hudPanel__label">Monstruos vencidos</span>
         <strong className="hudPanel__value">
           {correctAnswers}/{goal}
         </strong>

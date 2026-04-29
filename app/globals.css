@@ -1,20 +1,24 @@
 :root {
-  --ink: #183153;
-  --card: rgba(255, 255, 255, 0.9);
-  --card-strong: #ffffff;
-  --outline: rgba(24, 49, 83, 0.08);
-  --shadow: 0 24px 60px rgba(38, 70, 123, 0.18);
-  --yellow: #ffd85a;
-  --orange: #ff9a3d;
-  --pink: #ff75a0;
-  --blue: #5a8cff;
-  --sky: #88e3ff;
-  --teal: #40d7c5;
-  --green: #7ed957;
-  --grass: #57b957;
-  --danger: #ff6b7d;
-  --soft-danger: #ffe0e4;
-  --soft-success: #e5ffe5;
+  --ink: #24351f;
+  --card: rgba(248, 243, 229, 0.92);
+  --card-strong: #f8f1df;
+  --outline: rgba(65, 84, 47, 0.14);
+  --shadow: 0 24px 60px rgba(48, 61, 33, 0.22);
+  --gold: #d8b45f;
+  --gold-deep: #a77d2a;
+  --gold-soft: #f2df9b;
+  --moss: #718f45;
+  --moss-deep: #4d6530;
+  --sage: #b7c59b;
+  --forest: #30461f;
+  --forest-soft: #5f7b3b;
+  --sky: #cfe5d2;
+  --teal: #6aa68f;
+  --green: #8ea85f;
+  --grass: #5f7f37;
+  --danger: #b44f45;
+  --soft-danger: #f3dfd6;
+  --soft-success: #e4ecd7;
 }
 
 * {
@@ -31,9 +35,9 @@ body {
   color: var(--ink);
   font-family: "Trebuchet MS", Verdana, "Comic Sans MS", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.95), transparent 28%),
-    radial-gradient(circle at top right, rgba(255, 216, 90, 0.28), transparent 22%),
-    linear-gradient(180deg, #8fe2ff 0%, #b6f4ff 32%, #dfffd9 100%);
+    radial-gradient(circle at top left, rgba(255, 248, 224, 0.9), transparent 24%),
+    radial-gradient(circle at top right, rgba(216, 180, 95, 0.22), transparent 26%),
+    linear-gradient(180deg, #dce8cf 0%, #c8daba 34%, #efe7cf 100%);
 }
 
 body::before,
@@ -51,7 +55,7 @@ body::before {
   height: 340px;
   left: -120px;
   bottom: -120px;
-  background: rgba(255, 117, 160, 0.18);
+  background: rgba(110, 138, 78, 0.16);
 }
 
 body::after {
@@ -59,7 +63,7 @@ body::after {
   height: 280px;
   right: -100px;
   top: -80px;
-  background: rgba(90, 140, 255, 0.16);
+  background: rgba(216, 180, 95, 0.16);
 }
 
 button,
@@ -87,10 +91,10 @@ button {
   min-height: 780px;
   padding: 24px;
   border-radius: 34px;
-  border: 5px solid rgba(255, 255, 255, 0.68);
+  border: 5px solid rgba(249, 241, 219, 0.72);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.1)),
-    rgba(255, 255, 255, 0.2);
+    linear-gradient(180deg, rgba(255, 248, 232, 0.42), rgba(244, 236, 214, 0.18)),
+    rgba(255, 249, 235, 0.24);
   box-shadow: var(--shadow);
   overflow: hidden;
   backdrop-filter: blur(6px);
@@ -108,7 +112,7 @@ button {
   width: 360px;
   height: 360px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.28);
+  background: rgba(255, 244, 216, 0.22);
 }
 
 .gameFrame::after {
@@ -116,7 +120,7 @@ button {
   width: 300px;
   height: 300px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.16);
+  background: rgba(123, 150, 85, 0.14);
 }
 
 .screenCard,
@@ -136,9 +140,9 @@ button {
   width: min(920px, 100%);
   padding: 42px;
   border-radius: 30px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(252, 253, 255, 0.9));
-  border: 2px solid rgba(255, 255, 255, 0.75);
-  box-shadow: 0 18px 48px rgba(27, 52, 99, 0.14);
+  background: linear-gradient(180deg, rgba(249, 243, 229, 0.98), rgba(241, 234, 214, 0.94));
+  border: 2px solid rgba(250, 243, 223, 0.9);
+  box-shadow: 0 18px 48px rgba(61, 75, 43, 0.16);
   text-align: center;
 }
 
@@ -154,8 +158,8 @@ button {
   margin-bottom: 16px;
   padding: 8px 14px;
   border-radius: 999px;
-  background: rgba(90, 140, 255, 0.12);
-  color: #335ab7;
+  background: rgba(113, 143, 69, 0.14);
+  color: var(--moss-deep);
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -171,7 +175,7 @@ button {
 
 .screenHint {
   margin-top: 18px;
-  color: rgba(24, 49, 83, 0.72);
+  color: rgba(36, 53, 31, 0.72);
 }
 
 .buttonRow {
@@ -203,14 +207,14 @@ button {
 }
 
 .button--primary {
-  color: #183153;
-  background: linear-gradient(180deg, #ffd85a 0%, #ffb84f 100%);
-  box-shadow: 0 12px 24px rgba(255, 184, 79, 0.28);
+  color: #233119;
+  background: linear-gradient(180deg, var(--gold-soft) 0%, var(--gold) 56%, var(--gold-deep) 100%);
+  box-shadow: 0 12px 24px rgba(167, 125, 42, 0.28);
 }
 
 .button--ghost {
-  color: var(--ink);
-  background: rgba(90, 140, 255, 0.12);
+  color: var(--forest);
+  background: rgba(113, 143, 69, 0.14);
 }
 
 .button--large {
@@ -273,8 +277,8 @@ button {
 .characterCard--selected,
 .characterCard:hover {
   transform: translateY(-4px);
-  background: linear-gradient(180deg, rgba(255, 250, 219, 0.96), rgba(255, 255, 255, 0.96));
-  box-shadow: 0 16px 30px rgba(255, 174, 66, 0.18);
+  background: linear-gradient(180deg, rgba(249, 238, 202, 0.98), rgba(246, 240, 223, 0.96));
+  box-shadow: 0 16px 30px rgba(128, 99, 41, 0.18);
 }
 
 .instructionsGrid {
@@ -282,6 +286,30 @@ button {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   margin-top: 34px;
+}
+
+.nintendoSplash {
+  position: relative;
+  z-index: 2;
+  min-height: 728px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.nintendoSplash__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: nintendoSplashReveal 1.8s ease-in-out both;
+}
+
+.nintendoSplash__image {
+  display: block;
+  width: min(340px, 72vw);
+  height: auto;
+  filter: drop-shadow(0 24px 34px rgba(24, 49, 83, 0.18));
 }
 
 .instructionCard {
@@ -300,7 +328,7 @@ button {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: linear-gradient(180deg, #5a8cff 0%, #335ab7 100%);
+  background: linear-gradient(180deg, var(--forest-soft) 0%, var(--moss-deep) 100%);
   color: white;
   font-weight: 900;
   font-size: 1.1rem;
@@ -327,14 +355,14 @@ button {
 .hudPanel {
   padding: 18px 20px;
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 12px 26px rgba(37, 78, 149, 0.1);
+  background: rgba(248, 242, 226, 0.94);
+  box-shadow: 0 12px 26px rgba(63, 77, 45, 0.12);
 }
 
 .hudPanel__label {
   display: block;
   margin-bottom: 10px;
-  color: rgba(24, 49, 83, 0.72);
+  color: rgba(56, 74, 36, 0.72);
   font-size: 0.92rem;
   font-weight: 700;
 }
@@ -356,7 +384,7 @@ button {
 }
 
 .lifeOrb--filled {
-  background: linear-gradient(180deg, #ff7890 0%, #ff5170 100%);
+  background: linear-gradient(180deg, #d36b54 0%, #a34739 100%);
 }
 
 .lifeOrb--empty {
@@ -369,15 +397,31 @@ button {
   padding: 24px;
   border-radius: 28px;
   overflow: hidden;
-  background: linear-gradient(180deg, #7edbff 0%, #aef0ff 48%, #e8ffce 100%);
-  box-shadow: 0 16px 32px rgba(47, 109, 158, 0.12);
+  background: linear-gradient(180deg, #c9d7b3 0%, #dfe7c6 44%, #eee3c8 100%);
+  box-shadow: 0 16px 32px rgba(67, 88, 42, 0.16);
+}
+
+.platformScene__background {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
+  animation: backgroundCrossfade 20s ease-in-out infinite;
+}
+
+.platformScene__background--primary {
+  opacity: 1;
+}
+
+.platformScene__background--secondary {
+  animation-delay: -10s;
 }
 
 .platformScene__sky,
 .platformScene__sun,
 .platformScene__cloud,
-.platformScene__hill,
-.platformScene__tile,
 .platformScene__gate,
 .platformScene__goalGlow,
 .platformScene__hero,
@@ -398,16 +442,16 @@ button {
   width: 88px;
   height: 88px;
   border-radius: 50%;
-  background: radial-gradient(circle at 35% 35%, #fff7b1, #ffd85a 58%, #ffb83f 100%);
-  box-shadow: 0 0 0 14px rgba(255, 216, 90, 0.18);
+  background: radial-gradient(circle at 35% 35%, #fff4b8, #e3c46d 58%, #b68b35 100%);
+  box-shadow: 0 0 0 14px rgba(216, 180, 95, 0.2);
   animation: pulse 2.2s ease-in-out infinite;
 }
 
 .platformScene__cloud {
   height: 36px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.82);
-  filter: drop-shadow(0 6px 8px rgba(255, 255, 255, 0.24));
+  background: rgba(252, 247, 233, 0.84);
+  filter: drop-shadow(0 6px 8px rgba(136, 121, 76, 0.18));
   animation: drift 14s linear infinite;
 }
 
@@ -453,76 +497,113 @@ button {
   animation-duration: 20s;
 }
 
-.platformScene__hill {
-  bottom: 92px;
-  width: 220px;
-  height: 160px;
-  border-radius: 50% 50% 0 0;
-  background: linear-gradient(180deg, #79d35f 0%, #3fae52 100%);
+.platformScene__gate {
+  right: 5.5%;
+  bottom: 34px;
+  width: 108px;
+  height: 170px;
+  pointer-events: none;
 }
 
-.platformScene__hill--left {
-  left: -20px;
+.platformScene__gateAura,
+.platformScene__gateFrame,
+.platformScene__gateCore,
+.platformScene__gateSpark {
+  position: absolute;
 }
 
-.platformScene__hill--right {
-  right: 24px;
-  width: 280px;
-  height: 180px;
+.platformScene__gateAura {
+  inset: 12px 2px 0;
+  border-radius: 36px 36px 18px 18px;
+  background:
+    radial-gradient(circle at center, rgba(236, 216, 148, 0.56), rgba(236, 216, 148, 0) 72%);
+  filter: blur(8px);
+  opacity: 0.9;
+  animation: pulse 1.9s ease-in-out infinite;
 }
 
-.platformScene__tile {
-  bottom: 48px;
-  width: 120px;
-  height: 64px;
-  border-radius: 20px 20px 12px 12px;
-  background: linear-gradient(180deg, #7d572e 0%, #9c6b37 100%);
-  box-shadow: inset 0 8px 0 rgba(255, 255, 255, 0.08);
+.platformScene__gateFrame {
+  inset: 10px 10px 0;
+  border-radius: 34px 34px 16px 16px;
+  background:
+    linear-gradient(180deg, rgba(235, 218, 173, 0.98), rgba(139, 113, 57, 0.94));
+  box-shadow:
+    0 16px 24px rgba(59, 69, 38, 0.2),
+    inset 0 5px 0 rgba(255, 245, 212, 0.4),
+    inset 0 -6px 0 rgba(88, 69, 34, 0.24);
 }
 
-.platformScene__tile::before {
+.platformScene__gateFrame::before {
   content: "";
   position: absolute;
-  inset: 0 0 auto;
-  height: 16px;
-  border-radius: 20px 20px 10px 10px;
-  background: linear-gradient(180deg, #7ed957 0%, #57b957 100%);
+  inset: 14px 14px 14px;
+  border-radius: 24px 24px 10px 10px;
+  border: 2px solid rgba(88, 69, 34, 0.4);
 }
 
-.platformScene__gate {
-  right: 6%;
-  bottom: 112px;
-  width: 70px;
-  height: 110px;
-  border-radius: 16px 16px 0 0;
-  border: 8px solid #f8f4ef;
-  border-bottom: 0;
-  background: rgba(255, 255, 255, 0.35);
+.platformScene__gateCore {
+  inset: 28px 28px 16px;
+  border-radius: 24px 24px 8px 8px;
+  background:
+    radial-gradient(circle at 50% 25%, rgba(255, 247, 212, 0.95), rgba(255, 255, 255, 0) 38%),
+    linear-gradient(180deg, rgba(215, 241, 188, 0.95), rgba(121, 190, 136, 0.82) 52%, rgba(92, 132, 72, 0.88) 100%);
+  box-shadow:
+    0 0 30px rgba(180, 203, 106, 0.54),
+    inset 0 0 22px rgba(255, 248, 222, 0.34);
+  overflow: hidden;
 }
 
-.platformScene__gateFlag {
+.platformScene__gateCore::before {
+  content: "";
   position: absolute;
+  inset: -10% -35%;
+  background: linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.18) 42%, rgba(255, 255, 255, 0.55) 50%, transparent 58%);
+  animation: gateSweep 3.2s linear infinite;
+}
+
+.platformScene__gateSpark {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 248, 196, 0.95);
+  box-shadow: 0 0 12px rgba(255, 248, 196, 0.9);
+  animation: gateSparkle 2.4s ease-in-out infinite;
+}
+
+.platformScene__gateSpark--top {
   top: 12px;
-  right: -18px;
-  width: 22px;
-  height: 18px;
-  border-radius: 0 12px 12px 0;
-  background: linear-gradient(180deg, #ff7890 0%, #ff5170 100%);
+  right: 12px;
+}
+
+.platformScene__gateSpark--middle {
+  top: 58px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  animation-delay: 0.8s;
+}
+
+.platformScene__gateSpark--bottom {
+  right: 2px;
+  bottom: 28px;
+  width: 7px;
+  height: 7px;
+  animation-delay: 1.5s;
 }
 
 .platformScene__goalGlow {
-  right: 9%;
-  bottom: 144px;
-  width: 84px;
-  height: 84px;
+  right: 8.3%;
+  bottom: 86px;
+  width: 112px;
+  height: 112px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
+  background: radial-gradient(circle, rgba(239, 223, 149, 0.76), rgba(255, 255, 255, 0));
   animation: pulse 1.5s ease-in-out infinite;
 }
 
 .platformScene__hero,
 .platformScene__zombie {
-  bottom: 88px;
+  bottom: 28px;
   transform: translateX(-50%);
 }
 
@@ -580,6 +661,37 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.heroFigure__image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 132px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 14px rgba(42, 58, 31, 0.2));
+}
+
+.heroFigure--card .heroFigure__image {
+  max-width: 112px;
+}
+
+.zombieFigure__image {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 132px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 14px rgba(42, 58, 31, 0.24));
+}
+
+.zombieFigure--card .zombieFigure__image {
+  max-width: 112px;
+}
+
+.zombieFigure--attack .zombieFigure__image {
+  transform: scale(1.55);
+  transform-origin: center bottom;
 }
 
 .heroFigure__avatar {
@@ -979,8 +1091,8 @@ button {
   gap: 18px;
   padding: 26px;
   border-radius: 28px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(252, 255, 255, 0.92));
-  box-shadow: 0 14px 28px rgba(44, 94, 154, 0.1);
+  background: linear-gradient(180deg, rgba(249, 243, 229, 0.98), rgba(243, 235, 216, 0.94));
+  box-shadow: 0 14px 28px rgba(70, 84, 45, 0.12);
 }
 
 .divisionCard__header {
@@ -1002,8 +1114,8 @@ button {
   display: inline-flex;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(126, 217, 87, 0.18);
-  color: #337733;
+  background: rgba(113, 143, 69, 0.16);
+  color: var(--moss-deep);
   font-size: 0.82rem;
   font-weight: 900;
   letter-spacing: 0.04em;
@@ -1018,19 +1130,19 @@ button {
   min-height: 96px;
   padding: 18px;
   border-radius: 24px;
-  background: linear-gradient(180deg, #f7fbff 0%, #eef7ff 100%);
+  background: linear-gradient(180deg, #f4ecd9 0%, #ede0bf 100%);
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 900;
 }
 
 .divisionEquation__symbol {
-  color: rgba(24, 49, 83, 0.6);
+  color: rgba(75, 87, 49, 0.66);
 }
 
 .divisionEquation__answer {
   min-width: 66px;
   text-align: center;
-  color: #335ab7;
+  color: var(--moss-deep);
 }
 
 .feedbackMessage {
@@ -1041,15 +1153,15 @@ button {
 }
 
 .feedbackMessage--idle {
-  color: rgba(24, 49, 83, 0.72);
+  color: rgba(36, 53, 31, 0.72);
 }
 
 .feedbackMessage--correct {
-  color: #278527;
+  color: #496a2b;
 }
 
 .feedbackMessage--wrong {
-  color: #cc304e;
+  color: #9f4035;
 }
 
 .answerDisplay {
@@ -1059,8 +1171,8 @@ button {
   min-height: 70px;
   padding: 16px;
   border-radius: 20px;
-  background: linear-gradient(180deg, #fff9dd 0%, #fffef5 100%);
-  border: 2px dashed rgba(255, 184, 79, 0.45);
+  background: linear-gradient(180deg, #f8eed2 0%, #fbf5e7 100%);
+  border: 2px dashed rgba(167, 125, 42, 0.42);
   font-size: 1.5rem;
   font-weight: 800;
 }
@@ -1075,8 +1187,8 @@ button {
   min-height: 58px;
   border: 0;
   border-radius: 18px;
-  background: linear-gradient(180deg, #f1f8ff 0%, #dfefff 100%);
-  box-shadow: 0 10px 18px rgba(53, 95, 208, 0.1);
+  background: linear-gradient(180deg, #f1ead6 0%, #e3d6b6 100%);
+  box-shadow: 0 10px 18px rgba(89, 79, 44, 0.1);
   color: var(--ink);
   font-size: 1.18rem;
   font-weight: 900;
@@ -1093,11 +1205,11 @@ button {
 }
 
 .resultScreen--victory .screenCard__content {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(233, 255, 224, 0.94));
+  background: linear-gradient(180deg, rgba(249, 243, 229, 0.98), rgba(226, 235, 207, 0.96));
 }
 
 .resultScreen--defeat .screenCard__content {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(255, 241, 228, 0.94));
+  background: linear-gradient(180deg, rgba(249, 243, 229, 0.98), rgba(240, 225, 210, 0.96));
 }
 
 .resultBadge {
@@ -1108,7 +1220,7 @@ button {
 
 .resultBadge span {
   display: block;
-  color: rgba(24, 49, 83, 0.7);
+  color: rgba(56, 74, 36, 0.72);
 }
 
 .resultBadge strong {
@@ -1268,6 +1380,63 @@ button {
   }
 }
 
+@keyframes gateSweep {
+  from {
+    transform: translateX(-34%);
+  }
+
+  to {
+    transform: translateX(34%);
+  }
+}
+
+@keyframes gateSparkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.8) translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15) translateY(-8px);
+  }
+}
+
+@keyframes backgroundCrossfade {
+  0%,
+  42% {
+    opacity: 1;
+  }
+
+  50%,
+  92% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes nintendoSplashReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.86);
+  }
+
+  20%,
+  72% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.04);
+  }
+}
+
 @media (max-width: 980px) {
   .gameFrame {
     min-height: auto;
@@ -1331,11 +1500,9 @@ button {
     flex-direction: column;
   }
 
-  .platformScene__tile {
-    width: 92px;
-  }
-
   .platformScene__gate {
     right: 2%;
+    width: 92px;
+    height: 148px;
   }
 }

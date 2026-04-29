@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { CharacterOption } from "@/types/game";
 
 interface HeroFigureProps {
@@ -6,11 +7,32 @@ interface HeroFigureProps {
   size?: "card" | "scene";
 }
 
+const heroSpriteMap = {
+  girl: {
+    ready: "/assets/characters/female-idle.png",
+    happy: "/assets/characters/female-attack.png",
+    hurt: "/assets/characters/female-hurt.png"
+  },
+  boy: {
+    ready: "/assets/characters/male-idle.png",
+    happy: "/assets/characters/male-attack.png",
+    hurt: "/assets/characters/male-hurt.png"
+  }
+} as const;
+
+const heroSpriteSize = {
+  card: 112,
+  scene: 132
+} as const;
+
 export function HeroFigure({
   character,
   mood = "ready",
   size = "scene"
 }: HeroFigureProps) {
+  const spriteSrc = heroSpriteMap[character][mood];
+  const spriteSize = heroSpriteSize[size];
+
   return (
     <div
       aria-hidden="true"
@@ -18,15 +40,14 @@ export function HeroFigure({
     >
       <div className="heroFigure__shadow" />
       <div className="heroFigure__avatar">
-        <div className="heroFigure__head">
-          <div className="heroFigure__face">
-            <span className="heroFigure__eye heroFigure__eye--left" />
-            <span className="heroFigure__eye heroFigure__eye--right" />
-            <span className="heroFigure__smile" />
-          </div>
-        </div>
-        <div className="heroFigure__torso" />
-        <div className="heroFigure__legs" />
+        <Image
+          alt=""
+          className="heroFigure__image"
+          height={spriteSize}
+          priority={size === "scene"}
+          src={spriteSrc}
+          width={spriteSize}
+        />
       </div>
     </div>
   );

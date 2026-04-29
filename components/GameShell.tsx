@@ -3,10 +3,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { GOAL_CORRECT_ANSWERS, MAX_LIVES, getEncounterLabel, getNextDivision } from "@/lib/divisions";
 import { useGameSounds } from "@/hooks/useGameSounds";
-import type { BattleFeedback, CharacterOption, DivisionQuestion, Screen } from "@/types/game";
+import type { BattleFeedback, CharacterOption, MathQuestion, Screen } from "@/types/game";
 import { CharacterSelectScreen } from "./screens/CharacterSelectScreen";
 import { GameScreen } from "./screens/GameScreen";
 import { InstructionsScreen } from "./screens/InstructionsScreen";
+import { NintendoIntroScreen } from "./screens/NintendoIntroScreen";
 import { ResultScreen } from "./screens/ResultScreen";
 import { StartScreen } from "./screens/StartScreen";
 
@@ -15,7 +16,7 @@ export default function GameShell() {
   const [selectedCharacter, setSelectedCharacter] = useState<CharacterOption | null>(null);
   const [lives, setLives] = useState(MAX_LIVES);
   const [correctAnswers, setCorrectAnswers] = useState(0);
-  const [currentQuestion, setCurrentQuestion] = useState<DivisionQuestion | null>(null);
+  const [currentQuestion, setCurrentQuestion] = useState<MathQuestion | null>(null);
   const [usedQuestionKeys, setUsedQuestionKeys] = useState<string[]>([]);
   const [answer, setAnswer] = useState("");
   const [feedback, setFeedback] = useState<BattleFeedback>("idle");
@@ -56,13 +57,22 @@ export default function GameShell() {
     setScreen("instructions");
   }
 
-  function handleStartGame() {
+  function handleContinueFromNintendo() {
     if (!selectedCharacter) {
       return;
     }
 
     resetRun();
     setScreen("playing");
+  }
+
+  function handleStartGame() {
+    if (!selectedCharacter) {
+      return;
+    }
+
+    clearTransitionTimer();
+    setScreen("nintendo");
   }
 
   function handleRestart() {
@@ -229,6 +239,10 @@ export default function GameShell() {
           onSelect={handleSelectCharacter}
           selectedCharacter={selectedCharacter}
         />
+      )}
+
+      {screen === "nintendo" && selectedCharacter && (
+        <NintendoIntroScreen onContinue={handleContinueFromNintendo} />
       )}
 
       {screen === "instructions" && selectedCharacter && (

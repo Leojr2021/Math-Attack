@@ -14,12 +14,12 @@ const characterCards: Array<{
 }> = [
   {
     id: "girl",
-    label: "Aventurera",
-    description: "Rapida, curiosa y lista para resolver divisiones."
+    label: "Zelda",
+    description: "Rapida, curiosa y lista para resolver operaciones."
   },
   {
     id: "boy",
-    label: "Aventurero",
+    label: "Link",
     description: "Valiente, alegre y listo para cruzar el mapa."
   }
 ];

@@ -1,3 +1,4 @@
+import { GOAL_CORRECT_ANSWERS } from "@/lib/divisions";
 import { HeroFigure } from "@/components/game/HeroFigure";
 import { ZombieFigure } from "@/components/game/ZombieFigure";
 
@@ -10,10 +11,10 @@ export function StartScreen({ onPlay }: StartScreenProps) {
     <section className="screenCard screenCard--start">
       <div className="screenCard__content">
         <span className="screenEyebrow">Aventura educativa 2D</span>
-        <h1>Pelea de Division</h1>
+        <h1>Pelea de Matematica</h1>
         <p className="screenLead">
-          Cruza plataformas, derrota zombies caricaturescos y gana cuando resuelvas 5 divisiones
-          correctas.
+          Cruza plataformas, derrota monstruos y gana cuando resuelvas {GOAL_CORRECT_ANSWERS}{" "}
+          operaciones correctas.
         </p>
 
         <div className="startPreview">
@@ -23,7 +24,7 @@ export function StartScreen({ onPlay }: StartScreenProps) {
           </div>
           <div className="startPreview__card">
             <ZombieFigure pose="idle" size="card" />
-            <span>Zombies divertidos</span>
+            <span>Monstruos</span>
           </div>
         </div>
 

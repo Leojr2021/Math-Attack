@@ -1,38 +1,56 @@
-import type { DivisionQuestion } from "@/types/game";
+import type { MathQuestion } from "@/types/game";
 
 export const MAX_LIVES = 5;
-export const GOAL_CORRECT_ANSWERS = 5;
+export const GOAL_CORRECT_ANSWERS = 10;
 
 const ENCOUNTER_LABELS = [
   "Puente Saltarin",
   "Bosque de Bloques",
   "Cueva del Musgo",
   "Colina Arcoiris",
-  "Portal de la Meta"
+  "Portal de la Meta",
+  "Sendero Brillante",
+  "Ruinas Doradas",
+  "Lago de Niebla",
+  "Templo del Eco",
+  "Camara Final"
 ];
 
 const questionPool = buildQuestionPool();
 
-function buildQuestionPool(): DivisionQuestion[] {
-  const pool: DivisionQuestion[] = [];
+function buildQuestionPool(): MathQuestion[] {
+  const pool: MathQuestion[] = [];
 
-  for (let divisor = 1; divisor <= 30; divisor += 1) {
-    for (let dividend = 100; dividend <= 300; dividend += 1) {
-      if (dividend % divisor !== 0) {
-        continue;
-      }
+  for (let leftOperand = 0; leftOperand <= 100; leftOperand += 1) {
+    for (let rightOperand = 0; rightOperand <= 100; rightOperand += 1) {
+      const answer = leftOperand * rightOperand;
 
-      const answer = dividend / divisor;
-
-      if (answer < 4 || answer > 25) {
+      if (answer > 100) {
         continue;
       }
 
       pool.push({
-        dividend,
-        divisor,
+        leftOperand,
+        operator: "x",
+        rightOperand,
         answer,
-        key: `${dividend}-${divisor}`
+        key: `mul-${leftOperand}-${rightOperand}`
+      });
+    }
+  }
+
+  for (let rightOperand = 1; rightOperand <= 100; rightOperand += 1) {
+    for (let leftOperand = 0; leftOperand <= 100; leftOperand += 1) {
+      if (leftOperand % rightOperand !== 0) {
+        continue;
+      }
+
+      pool.push({
+        leftOperand,
+        operator: "/",
+        rightOperand,
+        answer: leftOperand / rightOperand,
+        key: `div-${leftOperand}-${rightOperand}`
       });
     }
   }
@@ -44,7 +62,7 @@ export function getEncounterLabel(step: number): string {
   return ENCOUNTER_LABELS[step] ?? "Camino Final";
 }
 
-export function getNextDivision(usedKeys: string[]): DivisionQuestion {
+export function getNextDivision(usedKeys: string[]): MathQuestion {
   const recentKeys = new Set(usedKeys.slice(-10));
   const availableQuestions = questionPool.filter((question) => !recentKeys.has(question.key));
   const sourcePool = availableQuestions.length > 0 ? availableQuestions : questionPool;

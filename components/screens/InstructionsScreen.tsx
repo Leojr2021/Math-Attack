@@ -1,3 +1,4 @@
+import { GOAL_CORRECT_ANSWERS } from "@/lib/divisions";
 import type { CharacterOption } from "@/types/game";
 
 interface InstructionsScreenProps {
@@ -8,9 +9,9 @@ interface InstructionsScreenProps {
 
 const instructionSteps = [
   "Empiezas con 5 vidas.",
-  "Cada zombie te reta con una division.",
+  "Cada monstruo te reta con una operacion matematica.",
   "Si aciertas, avanzas y sumas un punto.",
-  "Si fallas, pierdes una vida y debes resolver esa misma division."
+  "Si fallas, pierdes una vida y debes resolver esa misma operacion."
 ];
 
 export function InstructionsScreen({
@@ -18,7 +19,7 @@ export function InstructionsScreen({
   onBack,
   onStart
 }: InstructionsScreenProps) {
-  const heroName = character === "girl" ? "aventurera" : "aventurero";
+  const heroName = character === "girl" ? "Zelda" : "Link";
 
   return (
     <section className="screenCard">
@@ -26,7 +27,7 @@ export function InstructionsScreen({
         <span className="screenEyebrow">Paso 2</span>
         <h1>Como jugar</h1>
         <p className="screenLead">
-          Tu {heroName} debe derrotar 5 zombies resolviendo divisiones exactas.
+          {heroName} debe derrotar {GOAL_CORRECT_ANSWERS} monstruos resolviendo operaciones del 0 al 100.
         </p>
 
         <div className="instructionsGrid">
