@@ -12,7 +12,7 @@ import { ResultScreen } from "./screens/ResultScreen";
 import { StartScreen } from "./screens/StartScreen";
 
 export default function GameShell() {
-  const [screen, setScreen] = useState<Screen>("start");
+  const [screen, setScreen] = useState<Screen>("nintendo");
   const [selectedCharacter, setSelectedCharacter] = useState<CharacterOption | null>(null);
   const [lives, setLives] = useState(MAX_LIVES);
   const [correctAnswers, setCorrectAnswers] = useState(0);
@@ -58,12 +58,8 @@ export default function GameShell() {
   }
 
   function handleContinueFromNintendo() {
-    if (!selectedCharacter) {
-      return;
-    }
-
-    resetRun();
-    setScreen("playing");
+    clearTransitionTimer();
+    setScreen("start");
   }
 
   function handleStartGame() {
@@ -72,7 +68,8 @@ export default function GameShell() {
     }
 
     clearTransitionTimer();
-    setScreen("nintendo");
+    resetRun();
+    setScreen("playing");
   }
 
   function handleRestart() {
@@ -241,7 +238,7 @@ export default function GameShell() {
         />
       )}
 
-      {screen === "nintendo" && selectedCharacter && (
+      {screen === "nintendo" && (
         <NintendoIntroScreen onContinue={handleContinueFromNintendo} />
       )}
 
